@@ -1,12 +1,18 @@
 import { NextFunction, Request, Response, Router } from "express";
+import morgan, { Morgan } from "morgan";
 
 export class ApiV1RootRouter {
     router: Router
     
     constructor() {
         this.router = Router();
+        this.middleware();
         this.init();
     }
+    middleware() {
+        this.router.use(morgan('tiny'));
+    }
+
     init() {
         this.router.get('/', this.getHome);
     }
