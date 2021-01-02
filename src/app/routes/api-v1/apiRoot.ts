@@ -12,7 +12,7 @@ export class ApiV1RootRouter {
     }
 
     getHome = async (req: Request, res: Response, next: NextFunction) => {
-        res.status(200).send({ status: 'Success', message: ' it is working.'});
+        res.status(200).send({ status: 'Success', message: ' application is running.'});
     }
 }
 
